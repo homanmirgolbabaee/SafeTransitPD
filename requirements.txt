@@ -1,0 +1,6 @@
+streamlit
+llama-index
+llama-cpp-python
+folium 
+streamlit-folium
+pandas
