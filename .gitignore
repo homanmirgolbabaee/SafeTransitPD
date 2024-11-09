@@ -1,0 +1,12 @@
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Common Python files to ignore
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+env/
+*.log
