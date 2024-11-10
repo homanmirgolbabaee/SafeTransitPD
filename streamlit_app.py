@@ -1,5 +1,4 @@
 import streamlit as st
-from datetime import datetime, timedelta
 import pandas as pd
 import numpy as np
 from datetime import datetime
@@ -22,6 +21,9 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# === Custom CSS ===
+# === Custom CSS for Dark Theme ===
 st.markdown("""
     <style>
     /* Main Layout */
@@ -243,6 +245,7 @@ def render_home():
     # Quick Stats
     col1, col2, col3 = st.columns(3)
     metrics = AnalyticsHandler.get_metrics()
+    
     with col1:
         st.markdown("""
             <div class="card">
@@ -362,7 +365,8 @@ def render_resources():
             {"title": "Visa Process", "description": "Student visa application guide"},
             {"title": "Healthcare", "description": "Accessing medical services"}
         ]
-    } 
+    }
+    
     category = st.selectbox("Select Category:", list(categories.keys()))
     
     for resource in categories[category]:
@@ -425,7 +429,6 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
         st.session_state.clear()
